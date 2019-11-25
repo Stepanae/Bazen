@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.css">
+
+	<title>Анализ характеристик функционирования систем массового обслуживания.</title>
+
+</head>
+<body>
+ <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Информация о программе.</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Разработчик: Егоров Степан Андреевич
+                    </p>
+                    <p>
+                        Учебное заведение: Московский Государственный Технический Университет им. Н. Э. Баумана
+                    </p>
+                    <p>
+                        Группа: ИУ5-12М
+                    </p>
+                    <p>
+                        Год разработки: 2019
+                    </p>
+                    <p>
+                        Данная программа была реализована при помощи Javascript, HTML5 и Bootstrap4
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<div class="container">
+        <div class="about">
+            <div class="row align-items-center">
+                <div class="col-11 align-self-end">
+                    <h3 class="title text-center">Расчёт основных характеристик функционирования многофазной, одноканальной
+                        системы массового обслуживания методом "Базена".
+                    </h3>
+                </div>
+                <div class="col-1 align-self-end">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Справка
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="ishod_dan">
+            <div class="row align-items-center">
+                <div class="col align-self-start">
+                    <h4 class="subtitle">Управляемые параметры:</h4>
+                    <div class="form-group">
+                        <label for="numrows">Количество фаз в системе массового обслуживания:</label>
+                        <input id="numrows" class="form-control" onchange="change()">
+                    </div>
+                    <div class="form-group">
+                        <label for="number_after_poinnt">Количество знаков после запятой:</label>
+                        <select class="custom-select" id="number_after_poinnt">
+                            <option selected value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="what_time">Единица измерения времени:</label>
+                        <select class="custom-select" id="what_time">
+                            <option selected value=" с.">секунда</option>
+                            <option value=" мин.">минута</option>
+                            <option value=" ч.">час</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col align-self-start">
+                    <h4 class="subtitle">Исходные данные:</h4>
+                    <div class="form-group">
+                        <label for="zaiv_number">Число заявок:</label>
+                        <input id="zaiv_number" type="number" class="form-control" min="0" value="7">
+                    </div>
+                    <h5> Среднее время обслуживания заявки в каждой фазе:</h5>
+                    <div class="embed-responsive-item">
+                        <p id="maintablebody"></p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row justify-content-end">
+                <div class="col-4 align-self-end">
+                    <div class="form-group">
+                        <button id="btn_calc" class="btn btn-primary btn-block" style="margin-bottom: 1%">Рассчитать</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="result">
+            <h4 class="subtitle">Результат:</h4>
+            <table class="table table-bordered table-hover table-responsive" id="result_table">
+            </table>
+        </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="js/application/math.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/application/application.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/application/how_much_phase.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
